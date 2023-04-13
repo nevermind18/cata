@@ -1,0 +1,92 @@
+<div class="container">
+  <form [formGroup]="cartaoVisita" class="formulario" style="width: 70%;">
+    <div class="row">
+      <div class="col-6">
+        <mat-form-field
+          class="input"
+          appearance="fill"
+        >
+          <mat-label>Nome</mat-label>
+          <input matInput formControlName="nome" placeholder="Ex. Bruno" />
+          <mat-hint
+            *ngIf="
+              cartaoVisita.controls.nome.touched == true &&
+              cartaoVisita.controls.nome.errors
+            "
+            >{{nomeErro}}</mat-hint
+          >
+        </mat-form-field>
+      </div>
+      <div class="col-6">
+        <mat-form-field
+          class="input"
+          appearance="fill"
+          class="input"
+        >
+          <mat-label>Idade</mat-label>
+          <input matInput formControlName="idade" type="number" placeholder="Ex. 22" />
+          <mat-hint
+            *ngIf="
+              cartaoVisita.controls.idade.touched == true &&
+              cartaoVisita.controls.idade.errors
+            "
+            >{{idadeErro}}</mat-hint
+          >
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <mat-form-field
+          class="input"
+          appearance="fill"
+        >
+          <mat-label>Telefone</mat-label>
+          <input
+            matInput
+            formControlName="telefone"
+            placeholder="Ex. 914536915"
+            type="number"
+          />
+          <mat-hint
+            *ngIf="
+              cartaoVisita.controls.telefone.touched == true &&
+              cartaoVisita.controls.telefone.errors
+            "
+            >{{telefoneErro}}</mat-hint
+          >
+        </mat-form-field>
+      </div>
+      <div class="col-6">
+        <mat-form-field
+          class="input"
+          appearance="fill"
+          class="input"
+        >
+          <mat-label>Email</mat-label>
+          <input
+            matInput
+            formControlName="email"
+            placeholder="Ex. tete@gmail.com"
+          />
+          <mat-hint
+            *ngIf="
+              cartaoVisita.controls.email.touched == true &&
+              cartaoVisita.controls.email.errors
+            "
+            >{{emailErro}}</mat-hint
+          >
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row justify-content-between" style="margin-top: 1em">
+      <div class="col">
+      </div>
+      <div class="col-auto">
+        <button mat-raised-button color="primary" [disabled]="validar()" (click)="avancar()">
+          Avançar
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

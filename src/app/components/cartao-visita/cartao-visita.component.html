@@ -1,0 +1,180 @@
+<div class="container">
+  <form [formGroup]="cartaoVisita" class="formulario" style="width: 70%">
+    <div class="row" style="margin-top: 2em;">
+      <div class="col-6">
+        <img src="../../../assets/image/download.jpg" style="margin-left: 20%;"/>
+      </div>
+      <div class="col-6">
+        <div class="row">
+          <mat-form-field
+            class="input"
+            appearance="fill"
+          >
+            <mat-label>Nome</mat-label>
+            <input
+              matInput
+              formControlName="nome"
+              placeholder="Ex. Bruno"
+              readonly="true"
+            />
+            <mat-hint
+              *ngIf="
+                cartaoVisita.controls.nome.touched == true &&
+                cartaoVisita.controls.nome.errors
+              "
+              >Hint</mat-hint
+            >
+          </mat-form-field>
+        </div>
+        <div class="row">
+          <mat-form-field
+            class="input"
+            appearance="fill"
+            class="input"
+          >
+            <mat-label>Idade</mat-label>
+            <input
+              matInput
+              formControlName="idade"
+              placeholder="Ex. 22"
+              readonly="true"
+            />
+            <mat-hint
+              *ngIf="
+                cartaoVisita.controls.idade.touched == true &&
+                cartaoVisita.controls.idade.errors
+              "
+              >Hint</mat-hint
+            >
+          </mat-form-field>
+        </div>
+        <div class="row">
+          <mat-form-field
+            class="input"
+            appearance="fill"
+            class="input"
+            readonly="true"
+          >
+            <mat-label>Telefone</mat-label>
+            <input
+              matInput
+              formControlName="telefone"
+              placeholder="Ex. 914536915"
+            />
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6"></div>
+      <div class="col-6">
+        <mat-form-field
+          class="input"
+          appearance="fill"
+          class="input"
+          readonly="true"
+        >
+          <mat-label>Email</mat-label>
+          <input
+            matInput
+            formControlName="email"
+            placeholder="Ex. tete@gmail.com"
+            readonly="true"
+          />
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <mat-form-field
+          class="input"
+          appearance="fill"
+          readonly="true"
+        >
+          <mat-label>Endereco</mat-label>
+          <input
+            matInput
+            formControlName="endereco"
+            readonly="true"
+            placeholder="Ex. rua dos Mais"
+          />
+          <mat-hint
+            *ngIf="
+              cartaoVisita.controls.endereco.touched == true &&
+              cartaoVisita.controls.endereco.errors
+            "
+            >Hint</mat-hint
+          >
+        </mat-form-field>
+      </div>
+      <div class="col-6">
+        <mat-form-field
+          class="input"
+          appearance="fill"
+          class="input"
+          readonly="true"
+        >
+          <mat-label>Número</mat-label>
+          <input matInput formControlName="numero" placeholder="Ex. 800" readonly="true"/>
+          <mat-hint
+            *ngIf="
+              cartaoVisita.controls.numero.touched == true &&
+              cartaoVisita.controls.numero.errors
+            "
+            >Hint</mat-hint
+          >
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <mat-form-field
+          class="input"
+          appearance="fill"
+          readonly="true"
+        >
+          <mat-label>Bairro</mat-label>
+          <input
+            matInput
+            formControlName="bairro"
+            placeholder="Ex. vila Ipiranga"
+            readonly="true"
+          />
+          <mat-hint
+            *ngIf="
+              cartaoVisita.controls.bairro.touched == true &&
+              cartaoVisita.controls.bairro.errors
+            "
+            >Hint</mat-hint
+          >
+        </mat-form-field>
+      </div>
+      <div class="col-6">
+        <mat-form-field
+          class="input"
+          appearance="fill"
+          readonly="true"
+        >
+          <mat-label>Cidade</mat-label>
+          <input
+            matInput
+            formControlName="cidade"
+            placeholder="Ex. Porto Alegre"
+            readonly="true"
+          />
+        </mat-form-field>
+      </div>
+    </div>
+    <div
+      class="row justify-content-between"
+      style="margin-top: 1em"
+    >
+      <div class="col">
+        <button mat-raised-button color="primary" (click)="voltar()">
+          Voltar
+        </button>
+      </div>
+      <div class="col-auto"></div>
+    </div>
+  </form>
+</div>
